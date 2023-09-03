@@ -2,11 +2,10 @@ name: tests
 
 on:
   pull_request:
-  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: cd server/auth && npm install && npm run test:ci
+      - run: npm install && npm run test
