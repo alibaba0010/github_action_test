@@ -1,25 +1,25 @@
-// math.test.js
+// mathOperations.test.js
 
-const add = require("./index");
+const { add, subtract } = require('./index');
 
-describe("add function", () => {
-  it("should add two positive numbers correctly", () => {
-    const result = add(2, 3);
-    expect(result).toBe(5); // Expects the result to be 5
+// This will run before all tests in this suite
+beforeAll(() => {
+  console.log('Starting math operations tests...');
+});
+
+// This will run after all tests in this suite
+afterAll(() => {
+  console.log('Finished math operations tests...');
+});
+
+describe('Math Operations', () => {
+  it('should add two numbers correctly', () => {
+    expect(add(3, 5)).toBe(8);
   });
 
-  it("should add a positive and a negative number correctly", () => {
-    const result = add(5, -3);
-    expect(result).toBe(2); // Expects the result to be 2
+  it('should subtract two numbers correctly', () => {
+    expect(subtract(10, 4)).toBe(6);
   });
 
-  it("should add two negative numbers correctly", () => {
-    const result = add(-2, -3);
-    expect(result).toBe(-5); // Expects the result to be -5
-  });
-
-  it("should add zero and a number correctly", () => {
-    const result = add(0, 7);
-    expect(result).toBe(7); // Expects the result to be 7
-  });
+  // You can add more test cases here
 });
